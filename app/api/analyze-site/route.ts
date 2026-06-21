@@ -8,13 +8,12 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Use Google PageSpeed Insights API - Lighthouse scores only (AI-free free tier)
     const psiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=mobile`;
-    
-    const psiResponse = await fetch(psiUrl, { 
-      next: { revalidate: 3600 } // cache for 1 hour
+
+    const psiResponse = await fetch(psiUrl, {
+      next: { revalidate: 3600 },
     });
-    
+
     if (psiResponse.ok) {
       const psiData = await psiResponse.json();
       const categories = psiData.lighthouseResult?.categories || {};
