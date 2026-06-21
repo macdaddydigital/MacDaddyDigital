@@ -1,26 +1,927 @@
 @import "tailwindcss";
 
+/* ============================================
+   MacDaddy Digital — Complete 3-Vibe System
+   MAC DADDY | NEON NIGHTMARE | MARBLE DYNASTY
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
+
+  /* Default = MAC DADDY */
+  --bg: #0a0806;
+  --bg-elevated: #11100e;
+  --bg-card: #0f0d0b;
+  --bg-deep: #050403;
+
+  --accent: #c9a96e;
+  --accent-light: #e8d9b3;
+  --accent-bright: #f5e9c7;
+  --accent-dark: #8c6f3c;
+  --accent-darker: #5c4928;
+
+  --text-primary: #f5f2e9;
+  --text-secondary: #a8a49a;
+  --text-muted: #6b665b;
+
+  --border-subtle: #2a261f;
+  --border-accent: #3f3525;
+
+  --accent-gradient: linear-gradient(135deg, #5c4928 0%, #8c6f3c 18%, #c9a96e 42%, #e8d9b3 68%, #f5e9c7 100%);
+  --accent-gradient-text: linear-gradient(135deg, #5c4928 0%, #c9a96e 32%, #e8d9b3 68%, #f5e9c7 100%);
+
+  --section-y: 6rem;
+  --card-padding: 2.5rem;
+  --heading-scale: 1;
+  --nav-height: 5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   VIBE 1: MAC DADDY — Black leather + gold king energy
+   ============================================ */
+[data-vibe="macdaddy"] {
+  --bg: #0a0806;
+  --bg-elevated: #11100e;
+  --bg-card: #0f0d0b;
+  --bg-deep: #050403;
+
+  --accent: #c9a96e;
+  --accent-light: #e8d9b3;
+  --accent-bright: #f5e9c7;
+  --accent-dark: #8c6f3c;
+  --accent-darker: #5c4928;
+
+  --text-primary: #f5f2e9;
+  --text-secondary: #a8a49a;
+  --text-muted: #6b665b;
+
+  --border-subtle: #2a261f;
+  --border-accent: #3f3525;
+
+  --accent-gradient: linear-gradient(135deg, #5c4928 0%, #8c6f3c 18%, #c9a96e 42%, #e8d9b3 68%, #f5e9c7 100%);
+  --accent-gradient-text: linear-gradient(135deg, #5c4928 0%, #c9a96e 32%, #e8d9b3 68%, #f5e9c7 100%);
+
+  --section-y: 6rem;
+  --card-padding: 2.5rem;
+  --heading-scale: 1;
+}
+
+/* ============================================
+   VIBE 2: NEON NIGHTMARE — Cyberpunk rainy alley
+   ============================================ */
+[data-vibe="neon"] {
+  --font-display: var(--font-rajdhani);
+
+  --bg: #05050a;
+  --bg-elevated: #0a0a12;
+  --bg-card: #0f0f18;
+  --bg-deep: #000000;
+
+  --accent: #ff00cc;
+  --accent-light: #ff66e0;
+  --accent-bright: #ff99ff;
+  --accent-dark: #b3008f;
+  --accent-darker: #660052;
+
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0ff;
+  --text-muted: #7a7a9e;
+
+  --border-subtle: #1f1f2e;
+  --border-accent: #ff00cc;
+
+  --accent-gradient: linear-gradient(90deg, #ff00cc 0%, #00f0ff 50%, #c026ff 100%);
+  --accent-gradient-text: linear-gradient(90deg, #ff00cc, #00f0ff, #ff00cc);
+
+  --section-y: 5.5rem;
+  --card-padding: 2rem;
+  --heading-scale: 0.98;
+}
+
+/* ============================================
+   VIBE 3: MARBLE DYNASTY — Old money marble luxury
+   ============================================ */
+[data-vibe="marble"] {
+  --font-display: var(--font-playfair);
+
+  --bg: #f5f2ea;
+  --bg-elevated: #ede8df;
+  --bg-card: #e6e0d3;
+  --bg-deep: #2c2520;
+
+  --accent: #6b2d3c;
+  --accent-light: #9c4a5c;
+  --accent-bright: #c48a96;
+  --accent-dark: #4a1f2b;
+  --accent-darker: #2f141c;
+
+  --text-primary: #2c2520;
+  --text-secondary: #5c5248;
+  --text-muted: #8a7f72;
+
+  --border-subtle: #c9c0b3;
+  --border-accent: #6b2d3c;
+
+  --accent-gradient: linear-gradient(135deg, #2f141c 0%, #6b2d3c 40%, #9c4a5c 75%, #c48a96 100%);
+  --accent-gradient-text: linear-gradient(135deg, #4a1f2b 0%, #6b2d3c 45%, #9c4a5c 100%);
+
+  --section-y: 7.5rem;
+  --card-padding: 3rem;
+  --heading-scale: 1.35;
+}
+
+/* Base styles */
+html {
+  color-scheme: dark;
+}
+
+[data-vibe="marble"] html {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  transition: background 420ms ease, color 420ms ease;
+}
+
+/* ============================================
+   SEAMLESS BACKGROUND BLENDING WITH LOGOS
+   The goal: the page background continues the exact texture from the hero logo.
+   ============================================ */
+
+/* Base */
+.leather-bg {
+  background-color: var(--bg);
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* MAC DADDY — Use the actual leather from leatherlogo.png for perfect blend */
+[data-vibe="macdaddy"] .leather-bg {
+  background-image: url('/images/leatherlogo.png');
+  background-size: cover;
+  background-position: center 20%;
+  background-attachment: fixed;
+}
+
+[data-vibe="macdaddy"] .leather-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 4, 3, 0.68) 0%,
+    rgba(5, 4, 3, 0.52) 25%,
+    rgba(5, 4, 3, 0.62) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* NEON NIGHTMARE — Keep strong dark cyberpunk treatment */
+[data-vibe="neon"] .leather-bg {
+  background-color: #05050a;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 204, 0.03) 1px, transparent 1px);
+  background-size: 38px 38px;
+  background-attachment: fixed;
+}
+
+[data-vibe="neon"] .leather-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.85) 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* MARBLE DYNASTY — Use the actual marble from premiumlogo.png for seamless blend */
+[data-vibe="marble"] .leather-bg {
+  background-image: url('/images/premiumlogo.png');
+  background-size: cover;
+  background-position: center 15%;
+  background-attachment: fixed;
+  background-color: transparent;
+}
+
+[data-vibe="marble"] .leather-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Light veil — marble texture from premiumlogo.png should show through clearly */
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 242, 234, 0.55) 0%,
+    rgba(245, 242, 234, 0.68) 30%,
+    rgba(245, 242, 234, 0.60) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dynamic gradient text */
+.vibe-text {
+  background: var(--accent-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  transition: background-position 700ms ease;
+}
+
+.vibe-text:hover {
+  background-position: 100% 50%;
+}
+
+/* Buttons */
+.vibe-btn-primary {
+  background: var(--accent);
+  color: var(--bg-deep);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 9999px;
+}
+
+[data-vibe="neon"] .vibe-btn-primary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.3);
+}
+
+[data-vibe="neon"] .vibe-btn-primary:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 30px rgba(255, 0, 204, 0.6);
+}
+
+[data-vibe="marble"] .vibe-btn-primary {
+  background: var(--accent);
+  color: #f5f2ea;
+  letter-spacing: 0.06em;
+}
+
+/* Cards */
+.vibe-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
+  padding: var(--card-padding);
+}
+
+[data-vibe="macdaddy"] .vibe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px -15px rgba(0,0,0,0.6);
+}
+
+[data-vibe="neon"] .vibe-card {
+  border-color: #1f1f2e;
+}
+
+[data-vibe="neon"] .vibe-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 35px rgba(255,0,204,0.15);
+}
+
+[data-vibe="marble"] .vibe-card {
+  border-color: #c9c0b3;
+  box-shadow: 0 8px 30px -10px rgba(0,0,0,0.08);
+}
+
+[data-vibe="marble"] .vibe-card:hover {
+  border-color: var(--accent);
+}
+
+/* Section headings */
+.section-title {
+  font-family: var(--font-display);
+  font-size: calc(3.6rem * var(--heading-scale));
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+}
+
+[data-vibe="neon"] .section-title {
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+[data-vibe="marble"] .section-title {
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+/* Navigation */
+.nav-link {
+  position: relative;
+  color: var(--text-secondary);
+  transition: color 200ms ease;
+}
+
+.nav-link:hover { color: var(--text-primary); }
+.nav-link.active { color: var(--accent); }
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: var(--accent);
+  transition: width 300ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Force dark-only */
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 380ms ease, color 380ms ease;
+}
+
+/* ============================================
+   THEMED UTILITIES & COMPONENTS
+   ============================================ */
+
+/* === ORIGINAL: Ultra-premium leather (matched to logo) === */
+.leather-bg {
+  background-color: var(--bg);
+  background-image: var(--leather-texture);
+  position: relative;
+}
+
+.leather-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 32%, rgba(0,0,0,0.48) 100%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 400ms ease;
+}
+
+/* Neon: pure black + subtle high-tech grid */
+[data-vibe="neon"] .leather-bg {
+  background: var(--bg);
+  background-image: 
+    linear-gradient(rgba(0,249,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,249,255,0.035) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+[data-vibe="neon"] .leather-bg::before {
+  opacity: 0.85;
+  background: radial-gradient(circle at 50% 20%, rgba(0,249,255,0.04) 0%, transparent 55%);
+}
+
+/* Minimal: dead flat, almost no texture */
+[data-vibe="minimal"] .leather-bg {
+  background: var(--bg);
+  background-image: none;
+}
+
+[data-vibe="minimal"] .leather-bg::before {
+  opacity: 0.3;
+  background: none;
+}
+
+/* === THEMED GRADIENT TEXT (dramatically different per vibe) === */
+.gold-text, .accent-text {
+  background: var(--accent-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  transition: background 650ms cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: var(--font-display);
+}
+
+[data-vibe="original"] .gold-text,
+[data-vibe="original"] .accent-text {
+  letter-spacing: -0.025em;
+}
+
+[data-vibe="neon"] .gold-text,
+[data-vibe="neon"] .accent-text {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 18px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+[data-vibe="minimal"] .gold-text,
+[data-vibe="minimal"] .accent-text {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.gold-text:hover, .accent-text:hover {
+  background-position: 100% 50%;
+}
+
+/* Themed borders & cards */
+.gold-border { border-color: var(--accent); }
+
+.gold-gradient-border {
+  position: relative;
+  border: 1px solid var(--border-accent);
+}
+
+.gold-gradient-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: var(--accent-gradient);
+  opacity: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: opacity 400ms ease;
+}
+
+.gold-gradient-border:hover::after {
+  opacity: 0.12;
+}
+
+[data-vibe="neon"] .gold-gradient-border:hover::after {
+  opacity: 0.25;
+}
+
+/* Themed Buttons */
+.btn-gold {
+  background: var(--accent);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transition: left 700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-gold:hover::before { left: 250%; }
+
+.btn-gold:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+/* === ORIGINAL: Rich metallic lift + sheen === */
+[data-vibe="original"] .btn-gold {
+  box-shadow: 0 4px 18px -6px rgba(0,0,0,0.6);
+  letter-spacing: 0.04em;
+}
+
+/* === NEON: Violent glowing cyberpunk button === */
+[data-vibe="neon"] .btn-gold {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 12px rgba(0, 249, 255, 0.4),
+              inset 0 0 12px rgba(0, 249, 255, 0.1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-vibe="neon"] .btn-gold:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 28px rgba(0, 249, 255, 0.75),
+              0 0 48px rgba(255, 46, 148, 0.25);
+  transform: scale(1.01);
+}
+
+/* === MINIMAL: Quiet, editorial, zero decoration === */
+[data-vibe="minimal"] .btn-gold {
+  background: var(--text-primary);
+  color: var(--bg-deep);
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+[data-vibe="minimal"] .btn-gold:hover {
+  background: var(--accent);
+  color: var(--bg-deep);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-outline-gold:hover {
+  background: var(--accent);
+  color: var(--bg-deep);
+  border-color: var(--accent);
+}
+
+/* === NEON outline button === */
+[data-vibe="neon"] .btn-outline-gold {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+[data-vibe="neon"] .btn-outline-gold:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+/* === MINIMAL outline — very refined === */
+[data-vibe="minimal"] .btn-outline-gold {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  border-radius: 0;
+  letter-spacing: 0.1em;
+}
+
+[data-vibe="minimal"] .btn-outline-gold:hover {
+  background: var(--text-primary);
+  color: var(--bg-deep);
+  border-color: var(--text-primary);
+}
+
+/* === THEMED CARDS — Completely different personality per vibe === */
+
+/* ORIGINAL: Luxurious leather-embossed cards */
+[data-vibe="original"] .service-card,
+[data-vibe="original"] .project-card,
+[data-vibe="original"] .testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 40px -12px rgba(0,0,0,0.55);
+  transition: all 520ms cubic-bezier(0.23, 1, 0.32, 1);
+  padding: var(--card-padding);
+}
+
+[data-vibe="original"] .service-card::before,
+[data-vibe="original"] .project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 520ms ease;
+}
+
+[data-vibe="original"] .service-card:hover,
+[data-vibe="original"] .project-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-6px);
+  box-shadow: 0 40px 80px -18px rgba(0,0,0,0.7);
+}
+
+/* NEON: Aggressive glowing frames */
+[data-vibe="neon"] .service-card,
+[data-vibe="neon"] .project-card,
+[data-vibe="neon"] .testimonial-card {
+  background: #050505;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 0 0 1px rgba(0,249,255,0.06) inset;
+  transition: all 280ms cubic-bezier(0.23, 1, 0.32, 1);
+  padding: var(--card-padding);
+}
+
+[data-vibe="neon"] .service-card::before,
+[data-vibe="neon"] .project-card::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0.6;
+}
+
+[data-vibe="neon"] .service-card:hover,
+[data-vibe="neon"] .project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),
+              0 0 35px rgba(0,249,255,0.18);
+  transform: translateY(-2px) scale(1.005);
+}
+
+/* MINIMAL: Airy, refined, generous space */
+[data-vibe="minimal"] .service-card,
+[data-vibe="minimal"] .project-card,
+[data-vibe="minimal"] .testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: none;
+  padding: var(--card-padding);
+  transition: all 420ms ease;
+}
+
+[data-vibe="minimal"] .service-card:hover,
+[data-vibe="minimal"] .project-card:hover {
+  border-color: var(--border-accent);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Icon treatment per vibe */
+.service-card .icon-wrapper {
+  color: var(--accent);
+  transition: all 380ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+[data-vibe="original"] .service-card:hover .icon-wrapper {
+  transform: scale(1.08);
+}
+
+[data-vibe="neon"] .service-card:hover .icon-wrapper {
+  filter: brightness(1.3) saturate(1.4);
+  text-shadow: 0 0 14px var(--accent);
+}
+
+[data-vibe="minimal"] .service-card .icon-wrapper {
+  opacity: 0.85;
+}
+
+/* Themed Process */
+.process-connector {
+  background: linear-gradient(to bottom, var(--accent-dark), var(--accent));
+}
+
+/* Themed Form */
+.form-input {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: all 200ms ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent);
+  background: var(--bg-card);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+  padding-right: 3rem;
+}
+
+/* === THEMED NAVIGATION === */
+.nav-link {
+  position: relative;
+  color: var(--text-secondary);
+  transition: color 200ms ease;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-link:hover { color: var(--text-primary); }
+
+.nav-link.active { color: var(--accent); }
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+[data-vibe="neon"] .nav-link {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+[data-vibe="minimal"] .nav-link {
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* === SECTION HEADINGS — wildly different personality === */
+.section-heading {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-size: calc(3.75rem * var(--heading-scale));
+  line-height: 0.88;
+}
+
+[data-vibe="neon"] .section-heading {
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+[data-vibe="minimal"] .section-heading {
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: calc(2.85rem * var(--heading-scale));
+  }
+}
+
+/* === QUOTE MARKS === */
+.quote-mark {
+  font-family: var(--font-display);
+  color: var(--accent);
+  opacity: 0.35;
+  line-height: 0.8;
+}
+
+[data-vibe="neon"] .quote-mark {
+  opacity: 0.6;
+  text-shadow: 0 0 20px var(--accent);
+}
+
+[data-vibe="minimal"] .quote-mark {
+  opacity: 0.2;
+  font-size: 7rem;
+  line-height: 0.6;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--bg-deep);
+}
+
+/* Sonner toasts */
+[data-sonner-toast] {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border-accent) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-sonner-toast][data-type="success"] {
+  border-color: var(--accent) !important;
+}
+
+/* === VIBE SWITCHER — adapts perfectly to current theme === */
+.vibe-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 3px;
+}
+
+[data-vibe="original"] .vibe-switcher {
+  border-radius: 9999px;
+}
+
+[data-vibe="neon"] .vibe-switcher {
+  border-radius: 1px;
+  border-color: #1f1f1f;
+}
+
+[data-vibe="minimal"] .vibe-switcher {
+  border-radius: 0;
+  border-color: #2a2a2a;
+  background: transparent;
+}
+
+.vibe-btn {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  color: var(--text-secondary);
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+
+[data-vibe="neon"] .vibe-btn {
+  border-radius: 1px;
+  letter-spacing: 0.1em;
+  font-family: var(--font-display);
+}
+
+[data-vibe="minimal"] .vibe-btn {
+  border-radius: 0;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+}
+
+.vibe-btn:hover {
+  color: var(--text-primary);
+}
+
+.vibe-btn.active {
+  background: var(--accent);
+  color: var(--bg-deep);
+  font-weight: 600;
+}
+
+[data-vibe="neon"] .vibe-btn.active {
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 65%, transparent);
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+[data-vibe="minimal"] .vibe-btn.active {
+  background: var(--text-primary);
+  color: var(--bg-deep);
+  border-radius: 0;
+}
+
+.vibe-label {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-align: center;
+  font-family: var(--font-display);
+}
+
+/* Extra neon glow utilities */
+[data-vibe="neon"] .service-card:hover .icon-wrapper,
+[data-vibe="neon"] .accent-text {
+  text-shadow: 0 0 12px var(--accent);
+}
+
+/* === PROCESS NUMBERS — different character per vibe === */
+.process-step .number {
+  font-family: var(--font-mono);
+}
+
+[data-vibe="neon"] .process-step .number {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+[data-vibe="minimal"] .process-step .number {
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+
+/* Success state crown in contact */
+[data-vibe="neon"] .contact-success-crown {
+  filter: brightness(1.4) saturate(1.6);
+  text-shadow: 0 0 25px var(--accent);
+}
+
+[data-vibe="minimal"] .contact-success-crown {
+  opacity: 0.6;
 }
