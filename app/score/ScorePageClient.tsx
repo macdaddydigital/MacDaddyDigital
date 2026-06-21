@@ -163,14 +163,15 @@ export default function ScorePageClient() {
     try {
       const response = await fetch(`/api/analyze-site?url=${encodeURIComponent(processedUrl)}`)
 
-      if (!response.ok) {
-        throw new Error("Lighthouse analysis failed")
-      }
-
       const data = await response.json()
 
-      if (data.error || !data.scores) {
-        throw new Error(data.error || "Bad Lighthouse response")
+      if (!response.ok || data.error || !data.scores) {
+        if (data.code === "quota_exceeded") {
+          throw new Error(
+            "The scoring service is temporarily at capacity. We're fixing this — please try again in a few hours."
+          )
+        }
+        throw new Error(data.error || "Lighthouse analysis failed")
       }
 
       const { scores, overall } = data
