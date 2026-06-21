@@ -253,7 +253,7 @@ export default function LandingPage() {
             <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-2xl mx-auto px-4 whitespace-pre-line">
               {content.ctaBody}
             </p>
-            <Link href={`/contact?vibe=${vibe}`}>
+            <Link href={`/score?vibe=${vibe}`}>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.985 }}
