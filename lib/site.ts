@@ -5,7 +5,7 @@ export const site = {
   region: "Prince Edward Island",
   url: "https://www.macdaddydigital.ca",
   description:
-    "Cody Mac builds websites, web apps, and custom web projects from Charlottetown, PEI. Direct contact, fast turnaround, and help after launch.",
+    "Forget forgettable. Bold websites, distinctive brands, and clever digital solutions from Charlottetown, PEI.",
 } as const
 
 /**
@@ -31,40 +31,40 @@ export const services = [
   {
     index: "01",
     title: "Websites",
-    text: "Business sites, landing pages, and rebuilds of something that’s gone stale. Clear pages, a fast load, and a design that feels like the business.",
+    text: "Bold sites that load fast and feel like the business. Landing pages, full sites, and rebuilds of anything that’s gone dull.",
   },
   {
     index: "02",
     title: "Web apps",
-    text: "When a brochure site isn’t enough. Booking, member areas, dashboards, and other tools that live in the browser.",
+    text: "When a page isn’t enough. Booking, member areas, dashboards, and other tools with a little nerve.",
   },
   {
     index: "03",
     title: "Custom projects",
-    text: "A one-off that doesn’t fit a package. If it belongs on the web, tell me what you’re trying to do. I’ll tell you straight if I can build it.",
+    text: "The one that doesn’t fit a package. If it lives on the web, tell us. We’ll say straight if we can build it.",
   },
   {
     index: "04",
     title: "Care and refreshes",
-    text: "Hosting help, upkeep, and updates to a site you already have. Launch day is the start. I’m still around after it.",
+    text: "Hosting help, upkeep, and a refresh when a site needs its spark back. Launch day is the start, not the goodbye.",
   },
 ] as const
 
 export const steps = [
   {
     index: "01",
-    title: "Tell me about it",
+    title: "Tell us about it",
     text: "A note or a short call. What you need, who it’s for, and any deadline on the horizon.",
   },
   {
     index: "02",
     title: "Get a quote",
-    text: "I reply with a scope, a timeline, and a price. Work starts after you say yes.",
+    text: "You get a scope, a timeline, and a price. Work starts after you say yes.",
   },
   {
     index: "03",
     title: "Watch it come together",
-    text: "You see the work while it’s happening and you can steer it. One person. One conversation.",
+    text: "You see the work while it’s happening, and you can steer it. One conversation the whole way.",
   },
   {
     index: "04",
@@ -76,15 +76,15 @@ export const steps = [
 export const reasons = [
   {
     title: "You reach the builder",
-    text: "Questions go to the person writing the code and shaping the pages. That’s me.",
+    text: "Questions go to the person writing the code and shaping the pages. That’s Cody.",
   },
   {
     title: "It moves",
-    text: "A studio of one doesn’t wait on a chain of approvals. Straightforward work gets a fast turnaround.",
+    text: "No chain of approvals. Straightforward work gets a fast turnaround.",
   },
   {
-    title: "Sharp, and quick to load",
-    text: "A handsome site that crawls is a miss. Looks and speed are both part of the job.",
+    title: "Sharp, and quick",
+    text: "A handsome site that crawls is still a miss. Looks and speed are both part of the job.",
   },
   {
     title: "After launch counts",

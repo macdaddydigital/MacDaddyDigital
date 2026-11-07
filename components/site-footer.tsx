@@ -13,12 +13,12 @@ export function SiteFooter() {
     <footer className="border-t border-gold/20">
       <div className="wrap flex flex-col gap-8 py-12 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="font-display text-2xl text-gold">Mac Daddy</p>
-          <p className="mt-1 text-[0.68rem] font-semibold tracking-[0.32em] text-faint uppercase">
+          <p className="font-display text-2xl font-semibold text-gold">MacDaddy</p>
+          <p className="mt-1 text-[0.68rem] font-semibold tracking-[0.32em] text-[#c6a36a] uppercase">
             Digital
           </p>
           <p className="mt-4 max-w-xs text-sm text-muted">
-            Websites and web apps from {site.city}, {site.region}.
+            Bold websites from {site.city}, {site.region}.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted" aria-label="Footer">

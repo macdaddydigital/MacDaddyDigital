@@ -6,52 +6,64 @@ import { projects } from "@/lib/work"
 export function HomePage() {
   return (
     <>
-      <section className="wrap grid gap-8 py-12 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-x-10 lg:py-24">
-        <p className="hero-rise kicker lg:col-start-1">
-          {site.city}, PEI
-        </p>
-        <h1 className="hero-rise hero-rise-2 max-w-3xl font-display text-[2.65rem] leading-[0.96] tracking-tight text-balance sm:text-6xl lg:col-start-1 lg:text-7xl">
-          Websites and web apps, built by the person who <em className="text-gold italic">makes them.</em>
-        </h1>
-        <div className="hero-rise relative mx-auto w-full max-w-56 sm:max-w-xs lg:col-start-2 lg:row-span-6 lg:row-start-1 lg:mx-0 lg:max-w-none">
-          <div className="absolute inset-[18%] -z-10 rounded-full bg-gold/20 blur-3xl" aria-hidden="true" />
+      <section className="wrap grid items-center gap-8 pb-16 pt-4 sm:pt-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:pb-20 lg:pt-2">
+        <div>
+          <p className="hero-rise kicker">Charlottetown, PEI</p>
+          <h1 className="hero-rise hero-rise-2 mt-5 font-display text-[2.55rem] leading-[0.92] font-bold tracking-[-0.02em] text-[#f7f2ea] sm:text-6xl lg:text-[4.05rem]">
+            <span className="block">Your Business</span>
+            <span className="block">Deserves Better</span>
+            <span className="block">
+              Than{" "}
+              <span className="relative inline-block italic text-[#e8b84a]">
+                Boring.
+                <svg
+                  viewBox="0 0 240 28"
+                  className="pointer-events-none absolute -bottom-[0.05em] left-[-2%] h-[0.34em] w-[108%]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 14 C 28 8, 48 18, 86 12 C 124 6, 150 16, 190 11 C 210 8, 224 12, 236 10 C 220 16, 190 18, 150 16 C 110 14, 70 20, 28 16 C 16 15, 8 16, 4 15 Z"
+                    fill="#e6b23a"
+                  />
+                </svg>
+              </span>
+            </span>
+          </h1>
+          <p className="hero-rise hero-rise-3 mt-7 max-w-xl text-base leading-relaxed text-[#ddd4c6] sm:text-lg">
+            Forget forgettable. We create bold websites, distinctive brands, and clever digital solutions that bring smart thinking with{" "}
+            <em className="font-display text-[#e8b84a] italic">standout style</em>.
+          </p>
+          <div className="hero-rise hero-rise-3 mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="#contact" className="btn btn-primary">
+              Let’s Make Some Noise
+            </a>
+            <a href="#services" className="btn btn-secondary">
+              Explore Our Services
+            </a>
+          </div>
+        </div>
+        <div className="hero-rise relative mx-auto w-full max-w-[17rem] sm:max-w-sm lg:mx-0 lg:max-w-none">
           <Image
-            src="/logo.png"
+            src="/hero-logo.webp"
             alt="Mac Daddy Digital logo, a gold crown above the name"
-            width={772}
-            height={523}
+            width={700}
+            height={777}
             priority
-            sizes="(min-width: 1024px) 40vw, 280px"
+            sizes="(min-width: 1024px) 46vw, 272px"
             className="h-auto w-full"
           />
         </div>
-        <p className="hero-rise hero-rise-3 max-w-xl text-lg leading-relaxed text-muted sm:text-xl lg:col-start-1">
-          I’m {site.owner}. {site.name} is my studio. I build sites and custom web projects for small businesses, creators, and local organizations. Fast turnaround, a modern result, and help after it goes live.
-        </p>
-        <div className="hero-rise hero-rise-3 flex flex-col gap-3 sm:flex-row lg:col-start-1">
-          <a href="#contact" className="btn btn-primary">
-            Let’s talk
-          </a>
-          <a href="#services" className="btn btn-secondary">
-            What I build
-          </a>
-        </div>
-        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-faint sm:flex sm:flex-wrap sm:gap-x-6 lg:col-start-1">
-          {["Direct contact", "Fast turnaround", "Help after launch", "PEI and remote"].map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
       </section>
 
       <section id="services" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
           <p className="kicker">Services</p>
-          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight text-balance sm:text-5xl">
-            What I build
+          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight font-semibold text-balance text-[#f7f2ea] sm:text-5xl">
+            What we <em className="text-[#e8b84a] italic">build</em>
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {services.map((service) => (
-              <article key={service.title} className="rounded-3xl border border-gold/20 bg-panel/60 p-7 sm:p-9">
+                <article key={service.title} className="rounded-3xl border border-gold/25 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.04)] sm:p-9">
                 <p className="font-display text-sm tracking-[0.18em] text-gold">{service.index}</p>
                 <h3 className="mt-4 font-display text-3xl">{service.title}</h3>
                 <p className="mt-3 max-w-md text-muted">{service.text}</p>
@@ -64,8 +76,8 @@ export function HomePage() {
       <section id="process" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
           <p className="kicker">Process</p>
-          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight text-balance sm:text-5xl">
-            How it works
+          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight font-semibold text-balance text-[#f7f2ea] sm:text-5xl">
+            How it <em className="text-[#e8b84a] italic">works</em>
           </h2>
           <ol className="relative mt-14 grid gap-10 lg:grid-cols-4">
             <div
@@ -87,9 +99,9 @@ export function HomePage() {
 
       <section id="why" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
-          <p className="kicker">Why me</p>
-          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight text-balance sm:text-5xl">
-            Why work with me
+          <p className="kicker">Why us</p>
+          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight font-semibold text-balance text-[#f7f2ea] sm:text-5xl">
+            Why work with <em className="text-[#e8b84a] italic">us</em>
           </h2>
           <ul className="mt-12 divide-y divide-gold/15 border-y border-gold/15">
             {reasons.map((reason) => (
@@ -115,12 +127,14 @@ export function HomePage() {
           ) : null}
           <div>
             <p className="kicker">About</p>
-            <h2 className="mt-4 font-display text-4xl leading-tight sm:text-5xl">A studio of one</h2>
+            <h2 className="mt-4 font-display text-4xl leading-tight font-semibold text-[#f7f2ea] sm:text-5xl">
+              A studio of <em className="text-[#e8b84a] italic">one</em>
+            </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-              {site.name} is {site.owner}, working from {site.city}, {site.region}, Canada. Small businesses, creators, and local organizations hire me when they want a modern site or a custom web project and would rather talk to the person building it.
+              {site.name} is {site.owner}, working from {site.city}, {site.region}, Canada. Small businesses, creators, and local groups come here when they want a site or a web app with some swagger, and a careful build behind it.
             </p>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink">
-              The name’s got a little swagger. The work is careful.
+            <p className="mt-5 max-w-2xl font-display text-2xl text-[#f7f2ea] italic">
+              The name’s loud. The work is careful.
             </p>
           </div>
         </div>
@@ -172,7 +186,9 @@ export function HomePage() {
         <div className="wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <p className="kicker">FAQ</p>
-            <h2 className="mt-4 font-display text-4xl leading-tight sm:text-5xl">Questions, answered</h2>
+            <h2 className="mt-4 font-display text-4xl leading-tight font-semibold text-[#f7f2ea] sm:text-5xl">
+              Questions, <em className="text-[#e8b84a] italic">answered</em>
+            </h2>
           </div>
           <div className="border-t border-gold/15">
             {faqs.map((item) => (

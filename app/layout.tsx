@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import type { ReactNode } from "react"
-import { Fraunces, Outfit } from "next/font/google"
+import { Outfit, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { site } from "@/lib/site"
 import "./globals.css"
@@ -11,9 +11,11 @@ const outfit = Outfit({
   display: "swap",
 })
 
-const fraunces = Fraunces({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
 })
 
@@ -25,7 +27,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Mac Daddy Digital | Websites and web apps",
+    default: "Mac Daddy Digital | Better than boring",
     template: "%s | Mac Daddy Digital",
   },
   description: site.description,
@@ -37,12 +39,12 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "/",
     siteName: site.name,
-    title: "Mac Daddy Digital | Websites and web apps",
+    title: "Mac Daddy Digital | Better than boring",
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mac Daddy Digital | Websites and web apps",
+    title: "Mac Daddy Digital | Better than boring",
     description: site.description,
   },
   alternates: {
@@ -81,7 +83,7 @@ export default function RootLayout({
   children: ReactNode
 }>) {
   return (
-    <html lang="en-CA" className={`${outfit.variable} ${fraunces.variable}`}>
+    <html lang="en-CA" className={`${outfit.variable} ${playfair.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"

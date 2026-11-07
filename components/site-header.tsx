@@ -46,25 +46,27 @@ export function SiteHeader() {
     >
       <div className="wrap flex h-[4.5rem] items-center justify-between gap-4">
         <Link href="/" className="group leading-none" onClick={() => setOpen(false)}>
-          <span className="block font-display text-xl tracking-tight text-gold sm:text-[1.35rem]">
-            Mac Daddy
+          <span className="block font-display text-[1.55rem] leading-none font-semibold tracking-tight text-[#e8b84a] sm:text-[1.7rem]">
+            MacDaddy
           </span>
-          <span className="mt-1 block text-[0.62rem] font-semibold tracking-[0.32em] text-faint uppercase">
+          <span className="mt-1 block text-[0.58rem] font-semibold tracking-[0.42em] text-[#c6a36a] uppercase">
             Digital
           </span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-muted transition-colors hover:text-gold"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link href="/#contact" className="btn btn-primary px-5">
+          {scrolled
+            ? links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-muted transition-colors hover:text-gold"
+                >
+                  {link.label}
+                </Link>
+              ))
+            : null}
+          <Link href="/#contact" className="btn btn-primary min-h-10 px-5 text-sm">
             Let’s talk
           </Link>
         </nav>
