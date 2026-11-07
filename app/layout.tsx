@@ -1,67 +1,96 @@
-import type { Metadata } from 'next'
-import { Playfair_Display, Creepster, Cormorant_Garamond, Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata, Viewport } from "next"
+import type { ReactNode } from "react"
+import { Outfit, Playfair_Display } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { site } from "@/lib/site"
+import "./globals.css"
 
-const playfair = Playfair_Display({ 
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: '--font-playfair',
-  display: 'swap'
+  variable: "--font-outfit",
+  display: "swap",
 })
 
-const creepster = Creepster({ 
-  weight: '400',
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: '--font-creepster',
-  display: 'swap'
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+  display: "swap",
 })
 
-const cormorant = Cormorant_Garamond({ 
-  subsets: ["latin"],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-cormorant',
-  display: 'swap'
-})
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: '--font-inter',
-  display: 'swap'
-})
+export const viewport: Viewport = {
+  themeColor: "#070707",
+  colorScheme: "dark",
+}
 
 export const metadata: Metadata = {
-  title: 'MacDaddy Digital | Premium Branding Agency',
-  description: 'Elite digital identities for businesses who refuse to blend in.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+  metadataBase: new URL(site.url),
+  title: {
+    default: "Mac Daddy Digital | Better than boring",
+    template: "%s | Mac Daddy Digital",
   },
+  description: site.description,
+  applicationName: site.name,
+  authors: [{ name: site.owner }],
+  creator: site.owner,
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    url: "/",
+    siteName: site.name,
+    title: "Mac Daddy Digital | Better than boring",
+    description: site.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mac Daddy Digital | Better than boring",
+    description: site.description,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  url: site.url,
+  image: `${site.url}/logo.png`,
+  description: site.description,
+  founder: {
+    "@type": "Person",
+    name: site.owner,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.city,
+    addressRegion: "PE",
+    addressCountry: "CA",
+  },
+  areaServed: "Worldwide",
+  knowsAbout: ["Websites", "Web applications", "Custom web projects"],
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${creepster.variable} ${cormorant.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en-CA" className={`${outfit.variable} ${playfair.variable}`}>
+      <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === "production" ? <Analytics /> : null}
       </body>
     </html>
   )
