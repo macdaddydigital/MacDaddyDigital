@@ -1,5 +1,5 @@
 export const site = {
-  name: "Mac Daddy Digital",
+  name: "MacDaddy Digital",
   owner: "Cody Mac",
   city: "Charlottetown",
   region: "Prince Edward Island",
@@ -31,7 +31,6 @@ export const services = [
   {
     title: "Business Websites",
     text: "Modern websites designed to showcase your business, build trust, and turn visitors into customers. From simple landing pages to complete business websites.",
-    price: "Starting at $799",
   },
   {
     title: "Custom Digital Projects",
@@ -81,17 +80,12 @@ export const faqs = [
   {
     question: "Can we work together if I’m not in PEI?",
     answer:
-      "Yes. We’re in Charlottetown and happy to meet on the Island when that’s useful. Most projects run remotely: calls, shared previews, and written notes. Where you live doesn’t decide whether we can work together.",
+      "Yes. Most projects run remotely: calls, shared previews, and written notes. Where you live doesn’t decide whether we can work together.",
   },
   {
     question: "Do you offer ongoing support?",
     answer:
       "Yes. We offer website maintenance and support packages to keep your site updated and performing well.",
-  },
-  {
-    question: "What happens after launch?",
-    answer:
-      "We don’t disappear after launch. You get a walkthrough and access to the site, then updates, fixes, and help as the business grows.",
   },
   {
     question: "Can you refresh a site I already have?",

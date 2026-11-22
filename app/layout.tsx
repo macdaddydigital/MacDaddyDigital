@@ -27,8 +27,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Mac Daddy Digital | Better than boring",
-    template: "%s | Mac Daddy Digital",
+    default: "MacDaddy Digital | Better than boring",
+    template: "%s | MacDaddy Digital",
   },
   description: site.description,
   applicationName: site.name,
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "/",
     siteName: site.name,
-    title: "Mac Daddy Digital | Better than boring",
+    title: "MacDaddy Digital | Better than boring",
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mac Daddy Digital | Better than boring",
+    title: "MacDaddy Digital | Better than boring",
     description: site.description,
   },
   alternates: {

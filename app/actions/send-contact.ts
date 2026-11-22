@@ -6,7 +6,7 @@ export type ContactFormState =
   | { ok: true }
   | { ok: false; error: string }
 
-const DEFAULT_FROM = "Mac Daddy Digital <onboarding@resend.dev>"
+const DEFAULT_FROM = "MacDaddy Digital <onboarding@resend.dev>"
 
 function notReady(): ContactFormState {
   console.error(

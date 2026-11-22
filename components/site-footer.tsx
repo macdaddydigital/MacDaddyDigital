@@ -18,7 +18,7 @@ export function SiteFooter() {
             Digital
           </p>
           <p className="mt-4 max-w-xs text-sm text-muted">
-            Bold websites from {site.city}, {site.region}.
+            Bold websites for businesses that refuse to be boring.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted" aria-label="Footer">

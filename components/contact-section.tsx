@@ -1,5 +1,4 @@
 import { ContactForm } from "@/components/contact-form"
-import { site } from "@/lib/site"
 
 export function ContactSection({
   as = "h2",
@@ -19,9 +18,6 @@ export function ContactSection({
           </Title>
           <p className="mt-5 max-w-md text-xl text-muted">
             Have an idea, an outdated website, or just know your business needs something better? Tell us what you’re thinking. We’ll help figure out the next step.
-          </p>
-          <p className="mt-8 text-sm text-faint">
-            {site.city}, {site.region}
           </p>
         </div>
         <ContactForm />

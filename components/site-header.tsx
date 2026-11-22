@@ -115,7 +115,6 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <p className="mt-10 text-sm text-faint">Charlottetown, Prince Edward Island</p>
       </div>
     ) : null}
     </>

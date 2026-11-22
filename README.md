@@ -1,6 +1,6 @@
-# Mac Daddy Digital
+# MacDaddy Digital
 
-Website for Mac Daddy Digital in Charlottetown, Prince Edward Island.
+Website for MacDaddy Digital in Charlottetown, Prince Edward Island.
 
 ```bash
 pnpm install
@@ -15,7 +15,7 @@ Quote requests are emailed with [Resend](https://resend.com). `RESEND_API_KEY` i
 | --- | --- | --- |
 | `CONTACT_TO_EMAIL` | Yes | The inbox that should receive quote requests |
 | `RESEND_API_KEY` | Yes | Already in Vercel. For local sends, copy it into `.env.local` |
-| `CONTACT_FROM_EMAIL` | No | Sender address. Defaults to `Mac Daddy Digital <onboarding@resend.dev>` |
+| `CONTACT_FROM_EMAIL` | No | Sender address. Defaults to `MacDaddy Digital <onboarding@resend.dev>` |
 
 Resend’s `onboarding@resend.dev` sender only delivers to the email address on the Resend account. To deliver to any other inbox, verify a domain in Resend and set `CONTACT_FROM_EMAIL` to an address on that domain.
 

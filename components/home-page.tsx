@@ -31,20 +31,25 @@ export function HomePage() {
                 <span className="relative inline-block italic text-[#e8b84a]">
                   Boring.
                   <svg
-                    viewBox="0 0 280 40"
-                    className="pointer-events-none absolute -bottom-[0.22em] left-[-3%] h-[0.38em] w-[110%]"
+                    viewBox="0 0 360 96"
+                    className="pointer-events-none absolute -bottom-[0.46em] left-[-8%] h-[0.78em] w-[124%]"
                     aria-hidden="true"
                   >
                     <path
-                      d="M6 22 C 30 8, 55 30, 95 16 C 130 4, 165 26, 210 14 C 235 8, 255 16, 274 12 C 250 24, 210 28, 165 22 C 120 16, 70 32, 28 22 C 16 18, 8 20, 6 22 Z"
-                      fill="#e6b23a"
+                      d="M22 74 C 34 80, 46 62, 62 66 C 96 76, 112 52, 146 56 C 188 62, 206 40, 248 42 C 286 44, 312 26, 346 20 C 322 34, 294 38, 264 34 C 228 28, 208 48, 174 46 C 136 42, 122 64, 90 60 C 64 56, 44 72, 26 68 C 18 66, 16 72, 22 74 Z"
+                      fill="#c4922a"
                     />
                     <path
-                      d="M18 24 C 70 30, 140 12, 230 20"
+                      d="M4 52 C 16 60, 24 36, 42 40 C 62 46, 70 20, 102 24 C 138 30, 150 8, 190 12 C 238 18, 256 2, 304 6 C 332 9, 350 0, 358 6 C 338 22, 312 18, 280 28 C 240 40, 214 24, 176 34 C 138 44, 118 28, 84 40 C 54 50, 36 34, 20 46 C 10 54, 2 48, 4 52 Z"
+                      fill="#e8b84a"
+                    />
+                    <path
+                      d="M48 36 C 92 22, 150 16, 214 12 C 258 9, 300 16, 332 10"
                       fill="none"
-                      stroke="#f6d98a"
-                      strokeWidth="3"
+                      stroke="#f8e2a8"
+                      strokeWidth="5"
                       strokeLinecap="round"
+                      opacity="0.9"
                     />
                   </svg>
                 </span>
@@ -64,7 +69,7 @@ export function HomePage() {
             <div className="absolute inset-[12%] -z-10 rounded-full bg-[#e8b84a]/25 blur-3xl" aria-hidden="true" />
             <Image
               src="/hero-stage-v2.webp"
-              alt="Mac Daddy Digital logo, a gold crown above the name"
+              alt="MacDaddy Digital logo, a gold crown above the name"
               width={945}
               height={1040}
               priority
@@ -88,9 +93,6 @@ export function HomePage() {
                 <article key={service.title} className="rounded-3xl border border-gold/25 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.04)] sm:p-9">
                 <h3 className="font-display text-4xl">{service.title}</h3>
                 <p className="mt-3 text-muted">{service.text}</p>
-                {"price" in service && service.price ? (
-                  <p className="mt-5 text-sm tracking-wide text-[#e8b84a]">{service.price}</p>
-                ) : null}
               </article>
             ))}
           </div>
@@ -126,7 +128,7 @@ export function HomePage() {
           ) : null}
           <div>
             <h2 className="font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
-              From <em className="text-[#e8b84a] italic">Charlottetown</em>
+              Built <em className="text-[#e8b84a] italic">different</em>
             </h2>
             <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
               MacDaddy Digital was built for businesses that deserve better than cookie-cutter websites. Whether you’re starting from scratch or replacing an outdated online presence, we create digital experiences that actually represent your business.
