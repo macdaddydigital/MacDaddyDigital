@@ -80,15 +80,13 @@ export function HomePage() {
 
       <section id="services" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
-          <p className="kicker">Services</p>
-          <h2 className="mt-4 max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
+          <h2 className="max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
             What we <em className="text-[#e8b84a] italic">build</em>
           </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
             {services.map((service) => (
                 <article key={service.title} className="rounded-3xl border border-gold/25 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.04)] sm:p-9">
-                <p className="font-display text-sm tracking-[0.18em] text-gold">{service.index}</p>
-                <h3 className="mt-4 font-display text-4xl">{service.title}</h3>
+                <h3 className="font-display text-4xl">{service.title}</h3>
                 <p className="mt-3 max-w-md text-muted">{service.text}</p>
               </article>
             ))}
@@ -98,11 +96,10 @@ export function HomePage() {
 
       <section id="why" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
-          <p className="kicker">Why us</p>
-          <h2 className="mt-4 max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
+          <h2 className="max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
             Why work with <em className="text-[#e8b84a] italic">us</em>
           </h2>
-          <ul className="mt-12 divide-y divide-gold/15 border-y border-gold/15">
+          <ul className="mt-10 divide-y divide-gold/15 border-y border-gold/15">
             {reasons.map((reason) => (
               <li key={reason.title} className="grid gap-2 py-6 md:grid-cols-[16rem_1fr] md:items-baseline md:gap-10">
                 <h3 className="font-display text-3xl text-gold">{reason.title}</h3>
@@ -125,8 +122,7 @@ export function HomePage() {
             />
           ) : null}
           <div>
-            <p className="kicker">About</p>
-            <h2 className="mt-4 font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
+            <h2 className="font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
               From <em className="text-[#e8b84a] italic">Charlottetown</em>
             </h2>
             <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
@@ -142,9 +138,8 @@ export function HomePage() {
       {projects.length > 0 ? (
         <section id="work" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
           <div className="wrap">
-            <p className="kicker">Work</p>
-            <h2 className="mt-4 font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">Selected work</h2>
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <h2 className="font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">Selected work</h2>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
               {projects.map((project) => {
                 const body = (
                   <>
@@ -184,8 +179,7 @@ export function HomePage() {
       <section id="faq" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
-            <p className="kicker">FAQ</p>
-            <h2 className="mt-4 font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
+            <h2 className="font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
               Questions, <em className="text-[#e8b84a] italic">answered</em>
             </h2>
           </div>

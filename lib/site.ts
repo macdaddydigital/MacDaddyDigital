@@ -29,22 +29,18 @@ export type ProjectType = (typeof projectTypes)[number]["value"]
 
 export const services = [
   {
-    index: "01",
     title: "Websites",
     text: "Bold sites that load fast and feel like the business. Landing pages, full sites, and rebuilds of anything that’s gone dull.",
   },
   {
-    index: "02",
     title: "Web apps",
     text: "When a page isn’t enough. Booking, member areas, dashboards, and other tools with a little nerve.",
   },
   {
-    index: "03",
     title: "Custom projects",
     text: "The one that doesn’t fit a package. If it lives on the web, tell us. We’ll say straight if we can build it.",
   },
   {
-    index: "04",
     title: "Care and refreshes",
     text: "We don’t disappear after launch. Updates, fixes, and help as the business grows.",
   },
