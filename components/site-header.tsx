@@ -44,12 +44,12 @@ export function SiteHeader() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="wrap flex h-[4.5rem] items-center justify-between gap-4">
+      <div className="wrap flex h-[5.5rem] items-center justify-between gap-4 lg:h-24">
         <Link href="/" className="group leading-none" onClick={() => setOpen(false)}>
-          <span className="block font-display text-[1.55rem] leading-none font-semibold tracking-tight text-[#e8b84a] sm:text-[1.7rem]">
+          <span className="block font-display text-[2rem] leading-none font-bold tracking-tight text-[#e8b84a] sm:text-[2.35rem] lg:text-[2.75rem]">
             MacDaddy
           </span>
-          <span className="mt-1 block text-[0.58rem] font-semibold tracking-[0.42em] text-[#c6a36a] uppercase">
+          <span className="mt-1.5 block text-[0.72rem] font-semibold tracking-[0.46em] text-[#e8b84a] uppercase sm:text-sm">
             Digital
           </span>
         </Link>
@@ -66,13 +66,13 @@ export function SiteHeader() {
                 </Link>
               ))
             : null}
-          <Link href="/#contact" className="btn btn-primary min-h-10 px-5 text-sm">
+          <Link href="/#contact" className="btn btn-primary min-h-12 px-7 text-base">
             Let’s talk
           </Link>
         </nav>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <Link href="/#contact" className="btn btn-primary min-h-11 shrink-0 px-3 text-sm" onClick={() => setOpen(false)}>
+          <Link href="/#contact" className="btn btn-primary min-h-11 shrink-0 px-4 text-sm" onClick={() => setOpen(false)}>
             Let’s talk
           </Link>
           <button
@@ -101,7 +101,7 @@ export function SiteHeader() {
         role="dialog"
         aria-modal="true"
         aria-label="Menu"
-        className="fixed inset-0 z-40 bg-night px-6 pt-24 lg:hidden"
+        className="fixed inset-0 z-40 bg-night px-6 pt-28 lg:hidden"
       >
         <nav className="flex flex-col" aria-label="Mobile">
           {links.map((link) => (

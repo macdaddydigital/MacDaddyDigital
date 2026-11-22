@@ -13,7 +13,7 @@ export function SiteFooter() {
     <footer className="border-t border-gold/20">
       <div className="wrap flex flex-col gap-8 py-12 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="font-display text-2xl font-semibold text-gold">MacDaddy</p>
+          <p className="font-display text-3xl font-bold text-[#e8b84a]">MacDaddy</p>
           <p className="mt-1 text-[0.68rem] font-semibold tracking-[0.32em] text-[#c6a36a] uppercase">
             Digital
           </p>
