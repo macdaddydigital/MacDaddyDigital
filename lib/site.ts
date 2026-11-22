@@ -5,7 +5,7 @@ export const site = {
   region: "Prince Edward Island",
   url: "https://www.macdaddydigital.ca",
   description:
-    "Forget forgettable. Bold websites, distinctive brands, and clever digital solutions from Charlottetown, PEI.",
+    "High-quality websites, brands, and digital experiences for small businesses, without the agency headaches. Professional websites starting at $799. Charlottetown, PEI.",
 } as const
 
 /**
@@ -29,51 +29,49 @@ export type ProjectType = (typeof projectTypes)[number]["value"]
 
 export const services = [
   {
-    title: "Websites",
-    text: "Bold sites that load fast and feel like the business. Landing pages, full sites, and rebuilds of anything that’s gone dull.",
+    title: "Business Websites",
+    text: "Modern websites designed to showcase your business, build trust, and turn visitors into customers. From simple landing pages to complete business websites.",
+    price: "Starting at $799",
   },
   {
-    title: "Web apps",
-    text: "When a page isn’t enough. Booking, member areas, dashboards, and other tools with a little nerve.",
+    title: "Custom Digital Projects",
+    text: "Need something beyond a website? We create custom digital solutions, tools, and experiences built around your business needs.",
   },
   {
-    title: "Custom projects",
-    text: "The one that doesn’t fit a package. If it lives on the web, tell us. We’ll say straight if we can build it.",
-  },
-  {
-    title: "Care and refreshes",
-    text: "We don’t disappear after launch. Updates, fixes, and help as the business grows.",
+    title: "Website Care & Support",
+    text: "We don’t disappear after launch. We help keep your website updated, running smoothly, and improving over time.",
   },
 ] as const
 
 export const reasons = [
   {
-    title: "A direct line",
-    text: "You get a direct line to the person building the project.",
+    title: "Direct Communication",
+    text: "No middleman. You work directly with the person building your project.",
   },
   {
-    title: "It moves",
-    text: "Straightforward work gets a fast turnaround.",
+    title: "Fast Turnaround",
+    text: "Efficient process. Clear communication. No unnecessary delays.",
   },
   {
-    title: "Sharp, and quick",
-    text: "A handsome site that crawls is still a miss. Looks and speed are both part of the job.",
+    title: "Design That Stands Out",
+    text: "Your business should not look like everyone else’s.",
   },
   {
-    title: "After launch counts",
-    text: "We don’t disappear after launch. Updates, fixes, and help as the business grows.",
-  },
-  {
-    title: "Here, or anywhere",
-    text: "Based in Charlottetown. Happy to meet on the Island, and just as glad to work remotely.",
+    title: "Support After Launch",
+    text: "A website is only the beginning. We’re here when you need updates, improvements, or changes.",
   },
 ] as const
 
 export const faqs = [
   {
+    question: "Why choose MacDaddy Digital?",
+    answer:
+      "You work directly with the person creating your project. No account managers, no confusing handoffs, and no getting lost in a big agency system.",
+  },
+  {
     question: "How long does a project take?",
     answer:
-      "A straightforward website is often a few weeks from the day we start to the day it goes live. A web app or a more custom build takes longer. You’ll get a timeline with your quote, based on the actual project. We don’t promise a date before we know the work.",
+      "A straightforward website is often a few weeks from the day we start to the day it goes live. A custom project takes longer. You’ll get a timeline based on the actual work. We don’t promise a date before we know it.",
   },
   {
     question: "What do you need from me?",
@@ -84,6 +82,11 @@ export const faqs = [
     question: "Can we work together if I’m not in PEI?",
     answer:
       "Yes. We’re in Charlottetown and happy to meet on the Island when that’s useful. Most projects run remotely: calls, shared previews, and written notes. Where you live doesn’t decide whether we can work together.",
+  },
+  {
+    question: "Do you offer ongoing support?",
+    answer:
+      "Yes. We offer website maintenance and support packages to keep your site updated and performing well.",
   },
   {
     question: "What happens after launch?",
@@ -98,7 +101,7 @@ export const faqs = [
   {
     question: "How does pricing work?",
     answer:
-      "Every project is quoted on its own. There’s no public rate card. Send a few details and we’ll reply with a price before any work starts.",
+      "Professional websites start at $799. Custom digital projects and larger builds are quoted for the work itself. We’ll confirm that price before anything starts.",
   },
   {
     question: "What if you can’t take it on?",

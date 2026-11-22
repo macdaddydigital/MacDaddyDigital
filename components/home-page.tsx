@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { ContactSection } from "@/components/contact-section"
-import { faqs, portrait, reasons, services, site } from "@/lib/site"
+import { faqs, portrait, reasons, services } from "@/lib/site"
 import { projects } from "@/lib/work"
 
 export function HomePage() {
@@ -51,15 +51,12 @@ export function HomePage() {
               </span>
             </h1>
             <p className="hero-rise hero-rise-3 mt-8 max-w-[34ch] text-xl leading-relaxed text-[#e6ddd0] lg:text-[1.375rem]">
-              Forget forgettable. We create bold websites, distinctive brands, and clever digital solutions that bring smart thinking with{" "}
-              <em className="font-display text-[1.15em] text-[#e8b84a] italic">standout style</em>.
+              We build websites, brands, and digital experiences that help small businesses look professional, earn trust, and{" "}
+              <em className="font-display text-[1.15em] text-[#e8b84a] italic">stand out online</em>.
             </p>
             <div className="hero-rise hero-rise-3 mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <a href="#contact" className="btn btn-primary btn-lg">
                 Let’s Make Some Noise
-              </a>
-              <a href="#services" className="btn btn-secondary btn-lg">
-                Explore Our Services
               </a>
             </div>
           </div>
@@ -81,13 +78,19 @@ export function HomePage() {
       <section id="services" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
           <h2 className="max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
-            What we <em className="text-[#e8b84a] italic">build</em>
+            What we <em className="text-[#e8b84a] italic">do</em>
           </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <p className="mt-4 text-sm tracking-[0.12em] text-[#c6a36a] uppercase">
+            Professional websites starting at $799.
+          </p>
+          <div className="mt-10 grid gap-4 lg:grid-cols-3">
             {services.map((service) => (
                 <article key={service.title} className="rounded-3xl border border-gold/25 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.04)] sm:p-9">
                 <h3 className="font-display text-4xl">{service.title}</h3>
-                <p className="mt-3 max-w-md text-muted">{service.text}</p>
+                <p className="mt-3 text-muted">{service.text}</p>
+                {"price" in service && service.price ? (
+                  <p className="mt-5 text-sm tracking-wide text-[#e8b84a]">{service.price}</p>
+                ) : null}
               </article>
             ))}
           </div>
@@ -101,7 +104,7 @@ export function HomePage() {
           </h2>
           <ul className="mt-10 divide-y divide-gold/15 border-y border-gold/15">
             {reasons.map((reason) => (
-              <li key={reason.title} className="grid gap-2 py-6 md:grid-cols-[16rem_1fr] md:items-baseline md:gap-10">
+              <li key={reason.title} className="grid gap-2 py-6 md:grid-cols-[20rem_1fr] md:items-baseline md:gap-10">
                 <h3 className="font-display text-3xl text-gold">{reason.title}</h3>
                 <p className="text-muted">{reason.text}</p>
               </li>
@@ -126,9 +129,9 @@ export function HomePage() {
               From <em className="text-[#e8b84a] italic">Charlottetown</em>
             </h2>
             <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-              {site.name} works from {site.city}, {site.region}, Canada. Small businesses, creators, and local groups come to us for a site or a web app with some swagger, and a careful build behind it.
+              MacDaddy Digital was built for businesses that deserve better than cookie-cutter websites. Whether you’re starting from scratch or replacing an outdated online presence, we create digital experiences that actually represent your business.
             </p>
-            <p className="mt-5 max-w-2xl font-display text-3xl text-[#f7f2ea] italic sm:text-4xl">
+            <p className="mt-8 max-w-2xl border-l-2 border-[#e8b84a] pl-5 font-display text-3xl leading-tight text-[#e8b84a] italic sm:text-5xl">
               The name’s loud. The work is careful.
             </p>
           </div>

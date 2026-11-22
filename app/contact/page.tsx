@@ -3,9 +3,9 @@ import { ContactSection } from "@/components/contact-section"
 import { Shell } from "@/components/shell"
 
 export const metadata: Metadata = {
-  title: "Get a quote",
+  title: "Contact",
   description:
-    "Tell us about your website, web app, or custom project. You’ll get a reply with questions or a quote. Based in Charlottetown, PEI, working remotely too.",
+    "Tell us about your website or the project you have in mind. Professional websites start at $799. Custom work is quoted for the job. Charlottetown, PEI.",
   alternates: {
     canonical: "/contact",
   },

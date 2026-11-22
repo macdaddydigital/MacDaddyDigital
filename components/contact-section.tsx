@@ -15,10 +15,10 @@ export function ContactSection({
       <div className="wrap grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
           <Title className="font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
-            Let’s make some <em className="text-[#e8b84a] italic">noise.</em>
+            Let’s Build Something <em className="text-[#e8b84a] italic">Worth Showing Off.</em>
           </Title>
           <p className="mt-5 max-w-md text-xl text-muted">
-            A rough idea is enough. We’ll come back with questions, a quote, or an honest no.
+            Have an idea, an outdated website, or just know your business needs something better? Tell us what you’re thinking. We’ll help figure out the next step.
           </p>
           <p className="mt-8 text-sm text-faint">
             {site.city}, {site.region}

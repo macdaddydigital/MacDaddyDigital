@@ -41,7 +41,7 @@ export function ContactForm() {
       <div className="rounded-3xl border border-gold/30 bg-panel px-6 py-12 text-center sm:px-10" role="status">
         <p className="font-display text-4xl text-gold">Got it.</p>
         <p className="mx-auto mt-4 max-w-sm text-muted">
-          We’ll read this and write back. If it’s a fit, the reply includes a quote.
+          We’ll read this and write back with the next step.
         </p>
         <button type="button" className="btn btn-secondary mt-8" onClick={() => setSent(false)}>
           Send another note
@@ -108,7 +108,7 @@ export function ContactForm() {
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <button type="submit" className="btn btn-primary" disabled={pending}>
-            {pending ? "Sending…" : "Get a quote"}
+            {pending ? "Sending…" : "Send it"}
           </button>
           <p className="text-xs text-faint">You get a direct reply from the person on the project.</p>
         </div>
