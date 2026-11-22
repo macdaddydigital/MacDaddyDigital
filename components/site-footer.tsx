@@ -30,7 +30,7 @@ export function SiteFooter() {
         </nav>
       </div>
       <div className="wrap border-t border-gold/15 py-5 text-xs text-faint">
-        © {year} {site.name}. {site.owner}.
+        © {year} {site.name}.
       </div>
     </footer>
   )

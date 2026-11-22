@@ -1,6 +1,6 @@
 # Mac Daddy Digital
 
-Website for Mac Daddy Digital, Cody Mac’s studio in Charlottetown, Prince Edward Island.
+Website for Mac Daddy Digital in Charlottetown, Prince Edward Island.
 
 ```bash
 pnpm install

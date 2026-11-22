@@ -50,7 +50,7 @@ export function parseContact(input: ContactInput): ParseResult {
   if (message.length < 20 || message.length > 4000) {
     return {
       ok: false,
-      error: "Add a little more detail so I can quote the work properly.",
+      error: "Add a little more detail so we can quote the work properly.",
     }
   }
 

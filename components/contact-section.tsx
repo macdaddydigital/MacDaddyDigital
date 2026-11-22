@@ -22,8 +22,6 @@ export function ContactSection({
             A rough idea is enough. We’ll come back with questions, a quote, or an honest no.
           </p>
           <p className="mt-8 text-sm text-faint">
-            {site.owner}
-            <span className="mx-2 text-gold/50">·</span>
             {site.city}, {site.region}
           </p>
         </div>

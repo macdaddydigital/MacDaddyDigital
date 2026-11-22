@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { ContactSection } from "@/components/contact-section"
-import { faqs, portrait, reasons, services, site, steps } from "@/lib/site"
+import { faqs, portrait, reasons, services, site } from "@/lib/site"
 import { projects } from "@/lib/work"
 
 export function HomePage() {
@@ -96,30 +96,6 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="process" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
-        <div className="wrap">
-          <p className="kicker">Process</p>
-          <h2 className="mt-4 max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
-            How it <em className="text-[#e8b84a] italic">works</em>
-          </h2>
-          <ol className="relative mt-14 grid gap-10 lg:grid-cols-4">
-            <div
-              className="absolute top-5 left-5 hidden h-px bg-gold/30 lg:right-[calc(25%-1.25rem)] lg:block"
-              aria-hidden="true"
-            />
-            {steps.map((step) => (
-              <li key={step.index} className="relative">
-                <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-gold bg-night font-display text-sm text-gold">
-                  {step.index}
-                </span>
-                <h3 className="mt-5 font-display text-3xl">{step.title}</h3>
-                <p className="mt-2 text-muted">{step.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section id="why" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
           <p className="kicker">Why us</p>
@@ -151,10 +127,10 @@ export function HomePage() {
           <div>
             <p className="kicker">About</p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
-              A studio of <em className="text-[#e8b84a] italic">one</em>
+              From <em className="text-[#e8b84a] italic">Charlottetown</em>
             </h2>
             <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-              {site.name} is {site.owner}, working from {site.city}, {site.region}, Canada. Small businesses, creators, and local groups come here when they want a site or a web app with some swagger, and a careful build behind it.
+              {site.name} works from {site.city}, {site.region}, Canada. Small businesses, creators, and local groups come to us for a site or a web app with some swagger, and a careful build behind it.
             </p>
             <p className="mt-5 max-w-2xl font-display text-3xl text-[#f7f2ea] italic sm:text-4xl">
               The name’s loud. The work is careful.
