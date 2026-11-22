@@ -1,19 +1,20 @@
-import { Suspense } from "react"
-import ContactPageClient from "./ContactPageClient"
+import type { Metadata } from "next"
+import { ContactSection } from "@/components/contact-section"
+import { Shell } from "@/components/shell"
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Tell us about your website or the project you have in mind. Professional websites start at $799. Custom work is quoted for the job. Charlottetown, PEI.",
+  alternates: {
+    canonical: "/contact",
+  },
+}
 
 export default function ContactPage() {
   return (
-    <Suspense 
-      fallback={
-        <div className="min-h-screen flex items-center justify-center bg-background">
-          <div className="text-center">
-            <div className="text-4xl mb-4">Loading...</div>
-            <p className="text-muted-foreground">Preparing your experience</p>
-          </div>
-        </div>
-      }
-    >
-      <ContactPageClient />
-    </Suspense>
+    <Shell>
+      <ContactSection as="h1" standalone />
+    </Shell>
   )
 }
