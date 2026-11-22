@@ -140,8 +140,8 @@
   }
 
   .hero-stage {
-    -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 70%, transparent 100%);
-    mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 82%, transparent 100%);
+    mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 82%, transparent 100%);
   }
 }
 

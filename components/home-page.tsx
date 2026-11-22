@@ -7,21 +7,23 @@ export function HomePage() {
   return (
     <>
       <section className="relative flex min-h-[calc(100svh-5.5rem)] items-center overflow-hidden lg:min-h-[calc(100svh-6rem)]">
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 items-center justify-center lg:flex" aria-hidden="true">
-          <div className="absolute top-1/2 left-1/2 h-[46%] w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e8b84a]/20 blur-3xl" />
-          <Image
-            src="/hero-stage.webp"
-            alt=""
-            width={945}
-            height={1040}
-            priority
-            className="hero-stage h-auto max-h-[68vh] w-auto max-w-[84%]"
-          />
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden lg:block" aria-hidden="true">
+          <div className="absolute top-1/2 right-[calc(40px-10.7vw)] w-[59.9vw] -translate-y-1/2">
+            <div className="absolute top-[42%] left-1/2 h-[55%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e8b84a]/25 blur-3xl" />
+            <Image
+              src="/hero-stage-v2.webp"
+              alt=""
+              width={945}
+              height={1040}
+              priority
+              className="hero-stage relative h-auto w-full"
+            />
+          </div>
         </div>
         <div className="wrap relative z-10 w-full py-10 lg:py-8">
-          <div className="max-w-[calc(100%-1rem)] lg:max-w-[calc(46vw-3.5rem)]">
+          <div className="max-w-[calc(100%-1rem)] lg:max-w-[46rem]">
             <p className="hero-rise kicker text-base tracking-[0.32em] lg:text-lg">Charlottetown, PEI</p>
-            <h1 className="hero-rise hero-rise-2 mt-6 font-display text-[2.85rem] leading-[0.88] font-bold tracking-[-0.03em] text-[#f7f2ea] sm:text-[3.75rem] lg:text-[min(5.85rem,calc((46vw-4.5rem)/6.9))]">
+            <h1 className="hero-rise hero-rise-2 mt-6 font-display text-[2.85rem] leading-[0.88] font-bold tracking-[-0.03em] text-[#f7f2ea] sm:text-[3.75rem] lg:text-[min(6.35rem,calc(44vw/6.15))]">
               <span className="block">Your Business</span>
               <span className="block">Deserves Better</span>
               <span className="block">
@@ -48,7 +50,7 @@ export function HomePage() {
                 </span>
               </span>
             </h1>
-            <p className="hero-rise hero-rise-3 mt-8 max-w-2xl text-xl leading-relaxed text-[#e6ddd0] lg:text-[1.375rem]">
+            <p className="hero-rise hero-rise-3 mt-8 max-w-[34ch] text-xl leading-relaxed text-[#e6ddd0] lg:text-[1.375rem]">
               Forget forgettable. We create bold websites, distinctive brands, and clever digital solutions that bring smart thinking with{" "}
               <em className="font-display text-[1.15em] text-[#e8b84a] italic">standout style</em>.
             </p>
@@ -64,7 +66,7 @@ export function HomePage() {
           <div className="relative mx-auto w-full max-w-md lg:hidden">
             <div className="absolute inset-[12%] -z-10 rounded-full bg-[#e8b84a]/25 blur-3xl" aria-hidden="true" />
             <Image
-              src="/hero-stage.webp"
+              src="/hero-stage-v2.webp"
               alt="Mac Daddy Digital logo, a gold crown above the name"
               width={945}
               height={1040}
