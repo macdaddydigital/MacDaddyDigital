@@ -139,12 +139,9 @@
     text-transform: uppercase;
   }
 
-  .hero-streaks {
-    background:
-      linear-gradient(118deg, transparent 18%, rgba(226, 178, 58, 0.28) 27%, transparent 36%),
-      linear-gradient(124deg, transparent 46%, rgba(243, 208, 120, 0.22) 54%, transparent 63%),
-      linear-gradient(112deg, transparent 68%, rgba(180, 120, 40, 0.2) 76%, transparent 86%),
-      radial-gradient(circle at 55% 42%, rgba(232, 184, 74, 0.22), transparent 46%);
+  .hero-stage {
+    -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 70%, transparent 100%);
+    mask-image: radial-gradient(ellipse closest-side at 50% 46%, #000 70%, transparent 100%);
   }
 }
 

@@ -7,22 +7,21 @@ export function HomePage() {
   return (
     <>
       <section className="relative flex min-h-[calc(100svh-5.5rem)] items-center overflow-hidden lg:min-h-[calc(100svh-6rem)]">
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 lg:block" aria-hidden="true">
-          <div className="hero-streaks absolute inset-0" />
-          <div className="absolute top-1/2 left-1/2 h-[55%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e8b84a]/25 blur-3xl" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 items-center justify-center lg:flex" aria-hidden="true">
+          <div className="absolute top-1/2 left-1/2 h-[46%] w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e8b84a]/20 blur-3xl" />
           <Image
             src="/hero-stage.webp"
             alt=""
-            width={725}
-            height={992}
+            width={945}
+            height={1040}
             priority
-            className="absolute top-1/2 left-1/2 h-auto w-[118%] max-w-none -translate-x-[46%] -translate-y-1/2"
+            className="hero-stage h-auto max-h-[68vh] w-auto max-w-[84%]"
           />
         </div>
         <div className="wrap relative z-10 w-full py-10 lg:py-8">
-          <div className="max-w-[calc(100%-1rem)] lg:max-w-[calc(50vw-2.5rem)]">
+          <div className="max-w-[calc(100%-1rem)] lg:max-w-[calc(46vw-3.5rem)]">
             <p className="hero-rise kicker text-base tracking-[0.32em] lg:text-lg">Charlottetown, PEI</p>
-            <h1 className="hero-rise hero-rise-2 mt-6 font-display text-[2.85rem] leading-[0.88] font-bold tracking-[-0.03em] text-[#f7f2ea] sm:text-[3.75rem] lg:text-[min(6.25rem,calc(11.25vw-3.85rem))]">
+            <h1 className="hero-rise hero-rise-2 mt-6 font-display text-[2.85rem] leading-[0.88] font-bold tracking-[-0.03em] text-[#f7f2ea] sm:text-[3.75rem] lg:text-[min(5.85rem,calc((46vw-4.5rem)/6.9))]">
               <span className="block">Your Business</span>
               <span className="block">Deserves Better</span>
               <span className="block">
@@ -67,8 +66,8 @@ export function HomePage() {
             <Image
               src="/hero-stage.webp"
               alt="Mac Daddy Digital logo, a gold crown above the name"
-              width={725}
-              height={992}
+              width={945}
+              height={1040}
               priority
               sizes="(max-width: 1024px) 80vw, 0px"
               className="h-auto w-full"
