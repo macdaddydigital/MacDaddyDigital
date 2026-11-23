@@ -3,6 +3,7 @@ import type { ReactNode } from "react"
 import { Outfit, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { site } from "@/lib/site"
+import { businessGraph } from "@/lib/seo"
 import "./globals.css"
 
 const outfit = Outfit({
@@ -56,26 +57,7 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  url: site.url,
-  image: `${site.url}/logo.png`,
-  description: site.description,
-  founder: {
-    "@type": "Person",
-    name: site.owner,
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: site.city,
-    addressRegion: "PE",
-    addressCountry: "CA",
-  },
-  areaServed: "Worldwide",
-  knowsAbout: ["Websites", "Web applications", "Custom web projects"],
-}
+const jsonLd = businessGraph()
 
 export default function RootLayout({
   children,

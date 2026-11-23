@@ -1,6 +1,10 @@
 import Image from "next/image"
+import Link from "next/link"
 import { ContactSection } from "@/components/contact-section"
+import { FaqList } from "@/components/site-page"
+import { JsonLd } from "@/components/json-ld"
 import { faqs, portrait, reasons, services } from "@/lib/site"
+import { faqSchema } from "@/lib/seo"
 import { projects } from "@/lib/work"
 
 export function HomePage() {
@@ -97,12 +101,45 @@ export function HomePage() {
           </p>
           <div className="mt-10 grid gap-4 lg:grid-cols-3">
             {services.map((service) => (
-                <article key={service.title} className="rounded-3xl border border-gold/25 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.04)] sm:p-9">
+              <article key={service.title} className="rounded-3xl border border-gold/25 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.04)] sm:p-9">
                 <h3 className="font-display text-4xl">{service.title}</h3>
                 <p className="mt-3 text-muted">{service.text}</p>
+                <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#e8b84a]">
+                  {service.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="hover:text-[#f6e2ad]">
+                      {link.label}
+                    </Link>
+                  ))}
+                </p>
               </article>
             ))}
           </div>
+          <p className="mt-8 max-w-2xl text-muted">
+            <Link href="/website-design" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              Website design
+            </Link>{" "}
+            for small businesses,{" "}
+            <Link href="/logo-design" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              logo design
+            </Link>
+            ,{" "}
+            <Link href="/social-media-management" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              social media
+            </Link>
+            , and{" "}
+            <Link href="/website-maintenance" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              care after launch
+            </Link>
+            . We work with businesses in{" "}
+            <Link href="/website-design-charlottetown" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              Charlottetown
+            </Link>{" "}
+            and{" "}
+            <Link href="/web-design-pei" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              across PEI
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -142,6 +179,11 @@ export function HomePage() {
             </p>
             <p className="mt-8 max-w-2xl border-l-2 border-[#e8b84a] pl-5 font-display text-3xl leading-tight text-[#e8b84a] italic sm:text-5xl">
               The name’s loud. The work is careful.
+            </p>
+            <p className="mt-6">
+              <Link href="/about" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+                More about MacDaddy Digital
+              </Link>
             </p>
           </div>
         </div>
@@ -189,25 +231,14 @@ export function HomePage() {
       ) : null}
 
       <section id="faq" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
+        <JsonLd data={faqSchema(faqs)} />
         <div className="wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <h2 className="font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
               Questions, <em className="text-[#e8b84a] italic">answered</em>
             </h2>
           </div>
-          <div className="border-t border-gold/15">
-            {faqs.map((item) => (
-              <details key={item.question} className="group border-b border-gold/15">
-                <summary className="flex items-center justify-between gap-6 py-6 font-display text-2xl sm:text-3xl">
-                  {item.question}
-                  <span className="faq-plus shrink-0 text-3xl leading-none text-gold transition-transform" aria-hidden="true">
-                    +
-                  </span>
-                </summary>
-                <p className="max-w-2xl pb-6 text-muted">{item.answer}</p>
-              </details>
-            ))}
-          </div>
+          <FaqList items={faqs} />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ export const site = {
   owner: "Cody Mac",
   city: "Charlottetown",
   region: "Prince Edward Island",
+  email: "themac@macdaddydigital.ca",
   url: "https://www.macdaddydigital.ca",
   description:
     "High-quality websites, brands, and digital experiences for small businesses, without the agency headaches. Professional websites starting at $799. Charlottetown, PEI.",
@@ -19,6 +20,9 @@ export const portrait: { src: string; alt: string } = {
 
 export const projectTypes = [
   { value: "website", label: "New website" },
+  { value: "logo", label: "Logo and brand" },
+  { value: "social", label: "Social media" },
+  { value: "care", label: "Website care" },
   { value: "web-app", label: "Web app" },
   { value: "custom", label: "Custom project" },
   { value: "refresh", label: "Refresh or upkeep" },
@@ -31,16 +35,53 @@ export const services = [
   {
     title: "Business Websites",
     text: "Modern websites designed to showcase your business, build trust, and turn visitors into customers. From simple landing pages to complete business websites.",
+    links: [{ href: "/website-design", label: "Website design" }],
   },
   {
     title: "Custom Digital Projects",
     text: "Need something beyond a website? We create custom digital solutions, tools, and experiences built around your business needs.",
+    links: [
+      { href: "/logo-design", label: "Logo design" },
+      { href: "/social-media-management", label: "Social media" },
+    ],
   },
   {
     title: "Website Care & Support",
     text: "We don’t disappear after launch. We help keep your website updated, running smoothly, and improving over time.",
+    links: [{ href: "/website-maintenance", label: "Website care" }],
   },
 ] as const
+
+export const mainNav = [
+  { href: "/website-design", label: "Websites" },
+  { href: "/logo-design", label: "Logos" },
+  { href: "/social-media-management", label: "Social" },
+  { href: "/website-maintenance", label: "Care" },
+  { href: "/about", label: "About" },
+] as const
+
+export const localNav = [
+  { href: "/website-design-charlottetown", label: "Charlottetown" },
+  { href: "/web-design-pei", label: "PEI" },
+] as const
+
+export const footerNav = {
+  services: [
+    { href: "/website-design", label: "Website design" },
+    { href: "/logo-design", label: "Logo design" },
+    { href: "/social-media-management", label: "Social media" },
+    { href: "/website-maintenance", label: "Website care" },
+  ],
+  company: [
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+    { href: "/#faq", label: "Questions" },
+  ],
+  places: [
+    { href: "/website-design-charlottetown", label: "Website design in Charlottetown" },
+    { href: "/web-design-pei", label: "Web design PEI" },
+  ],
+} as const
 
 export const reasons = [
   {
@@ -104,8 +145,3 @@ export const faqs = [
   },
 ] as const
 
-export const nav = [
-  { href: "/#services", label: "Services" },
-  { href: "/#about", label: "About" },
-  { href: "/#faq", label: "FAQ" },
-] as const
