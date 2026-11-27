@@ -62,7 +62,7 @@ export default function AboutPage() {
         <PageCta
           title="If the business deserves better, start there."
           text="Tell us what you’re thinking. You’ll get a direct reply from the person on the project."
-          action="Let’s talk"
+          action="Get a Free Quote"
         />
       </ContentPage>
     </Shell>

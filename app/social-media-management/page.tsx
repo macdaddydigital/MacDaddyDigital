@@ -94,7 +94,7 @@ export default function SocialMediaPage() {
         <PageCta
           title="Let’s put the business back on the feed."
           text="Tell us where you show up now and how often you want to be there. You’ll get a direct reply from the person on the project."
-          action="Talk about social"
+          action="Get a Free Quote"
         />
       </ContentPage>
     </Shell>

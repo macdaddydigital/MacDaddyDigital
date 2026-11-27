@@ -3,9 +3,101 @@ import Link from "next/link"
 import { ContactSection } from "@/components/contact-section"
 import { FaqList } from "@/components/site-page"
 import { JsonLd } from "@/components/json-ld"
-import { faqs, portrait, reasons, services } from "@/lib/site"
+import { faqs } from "@/lib/site"
 import { faqSchema } from "@/lib/seo"
-import { projects } from "@/lib/work"
+
+const offers = [
+  {
+    title: "Business Websites",
+    href: "/website-design",
+    link: "Website design",
+    items: ["Mobile-first", "Google-ready", "Fast loading", "Contact forms", "Google Maps", "Analytics"],
+  },
+  {
+    title: "Redesigns",
+    href: "/website-design",
+    link: "Refresh a site",
+    items: ["Clearer structure", "Mobile layout", "A stronger first impression", "Keep what already works", "An honest call if a rebuild is wiser"],
+  },
+  {
+    title: "Landing Pages",
+    href: "/website-design",
+    link: "Website design",
+    items: ["One offer, one page", "A headline that says what you do", "One clear way to get in touch", "Fast on a phone", "Easy to share"],
+  },
+  {
+    title: "Logos and Branding",
+    href: "/logo-design",
+    link: "Logo design",
+    items: ["A mark that holds up small", "Colour and type direction", "Files you can actually use", "Notes on how to use it"],
+  },
+  {
+    title: "Site Care",
+    href: "/website-maintenance",
+    link: "Website care",
+    items: ["Updates when the business changes", "Fixes when a page breaks", "Someone who knows the site", "We don’t disappear after launch"],
+  },
+  {
+    title: "Social",
+    href: "/social-media-management",
+    link: "Social media",
+    items: ["A posting rhythm you can keep", "Captions in your voice", "A look that stays consistent", "A plain check on what’s worth repeating"],
+  },
+] as const
+
+const missing = [
+  "Facebook page only",
+  "Slow website",
+  "Gmail address",
+  "No SEO",
+  "No Google Business optimization",
+]
+
+const included = [
+  "Professional website",
+  "Custom domain email",
+  "Google optimized",
+  "Mobile optimized",
+  "Fast hosting",
+  "Built to rank locally",
+]
+
+const facebook = ["Limited branding", "Easy to forget", "Owned by Meta", "Hard to find on Google"]
+const website = ["Your brand", "Memorable", "You own it", "Google searchable"]
+
+const steps = [
+  "Tell us about your business",
+  "We design your site",
+  "Review and revisions",
+  "Launch",
+  "Ongoing support",
+]
+
+function Mark({ kind }: { kind: "yes" | "no" }) {
+  const yes = kind === "yes"
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" className={`mt-0.5 shrink-0 ${yes ? "text-[#e8b84a]" : "text-[#a45a52]"}`}>
+      {yes ? (
+        <path d="M3.5 9.2 L7.2 13 L14.5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      ) : (
+        <path d="M4.5 4.5 L13.5 13.5 M13.5 4.5 L4.5 13.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      )}
+    </svg>
+  )
+}
+
+function CheckList({ items, kind }: { items: readonly string[]; kind: "yes" | "no" }) {
+  return (
+    <ul className="mt-5 space-y-2.5">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-2.5 text-[#f4efe6]">
+          <Mark kind={kind} />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export function HomePage() {
   return (
@@ -20,7 +112,7 @@ export function HomePage() {
               width={945}
               height={1040}
               priority
-              className="hero-stage relative h-auto w-full"
+              className="hero-stage hero-drift relative h-auto w-full"
             />
           </div>
         </div>
@@ -41,13 +133,16 @@ export function HomePage() {
                 </span>
               </span>
             </h1>
-            <p className="hero-rise hero-rise-3 mt-8 max-w-[34ch] text-xl leading-relaxed text-[#e6ddd0] lg:text-[1.375rem]">
-              We build websites, brands, and digital experiences that help small businesses look professional, earn trust, and{" "}
-              <em className="font-display text-[1.15em] text-[#e8b84a] italic">stand out online</em>.
+            <p className="hero-rise hero-rise-3 mt-8 max-w-[28ch] text-xl leading-snug text-[#e6ddd0] lg:text-[1.375rem]">
+              We build websites that earn trust before you ever answer the phone.
             </p>
-            <div className="hero-rise hero-rise-3 mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-              <a href="#contact" className="btn btn-primary btn-lg">
-                Let’s Make Some Noise
+            <p className="hero-rise hero-rise-3 mt-5 text-lg font-semibold text-[#e8b84a]">Websites starting at $799</p>
+            <div className="hero-rise hero-rise-3 mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <Link href="/contact" className="btn btn-primary btn-lg">
+                Get a Free Quote
+              </Link>
+              <a href="#services" className="text-base font-semibold text-[#e8b84a] hover:text-[#f6e2ad]">
+                See what we do
               </a>
             </div>
           </div>
@@ -60,152 +155,119 @@ export function HomePage() {
               height={1040}
               priority
               sizes="(max-width: 1024px) 80vw, 0px"
-              className="h-auto w-full"
+              className="hero-drift h-auto w-full"
             />
           </div>
         </div>
       </section>
 
-      <section id="services" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
+      <section className="reveal border-t border-gold/15 py-20 sm:py-28">
+        <div className="wrap max-w-4xl">
+          <h2 className="font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
+            We help small businesses look like the <em className="text-[#e8b84a] italic">obvious choice.</em>
+          </h2>
+          <p className="mt-8 max-w-3xl font-display text-2xl leading-snug text-[#f7f2ea] sm:text-3xl">
+            We don’t build pretty online brochures. We build websites that convince people to call you instead of your competitor.
+          </p>
+          <p className="mt-8 max-w-2xl border-l-2 border-[#e8b84a] pl-5 font-display text-3xl leading-tight text-[#e8b84a] italic sm:text-5xl">
+            The name’s loud. The work is careful.
+          </p>
+          <p className="mt-6">
+            <Link href="/about" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              More about MacDaddy Digital
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section id="services" className="reveal scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
           <h2 className="max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
             What we <em className="text-[#e8b84a] italic">do</em>
           </h2>
-          <p className="mt-4 text-sm tracking-[0.12em] text-[#c6a36a] uppercase">
-            Professional websites starting at $799.
-          </p>
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            {services.map((service) => (
-              <article key={service.title} className="rounded-3xl border border-gold/25 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.04)] sm:p-9">
-                <h3 className="font-display text-4xl">{service.title}</h3>
-                <p className="mt-3 text-muted">{service.text}</p>
-                <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#e8b84a]">
-                  {service.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="hover:text-[#f6e2ad]">
-                      {link.label}
-                    </Link>
-                  ))}
+          <p className="mt-4 text-sm tracking-[0.12em] text-[#c6a36a] uppercase">Professional websites starting at $799.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {offers.map((offer) => (
+              <article key={offer.title} className="lift rounded-3xl border border-gold/25 bg-black/40 p-7 sm:p-8">
+                <h3 className="font-display text-3xl text-[#f7f2ea] sm:text-4xl">
+                  <Link href={offer.href} className="hover:text-[#e8b84a]">
+                    {offer.title}
+                  </Link>
+                </h3>
+                <CheckList items={offer.items} kind="yes" />
+                <p className="mt-5 text-sm">
+                  <Link href={offer.href} className="text-[#e8b84a] hover:text-[#f6e2ad]">
+                    {offer.link}
+                  </Link>
                 </p>
               </article>
             ))}
           </div>
-          <p className="mt-8 max-w-2xl text-muted">
-            <Link href="/website-design" className="text-[#e8b84a] hover:text-[#f6e2ad]">
-              Website design
-            </Link>{" "}
-            for small businesses,{" "}
-            <Link href="/logo-design" className="text-[#e8b84a] hover:text-[#f6e2ad]">
-              logo design
-            </Link>
-            ,{" "}
-            <Link href="/social-media-management" className="text-[#e8b84a] hover:text-[#f6e2ad]">
-              social media
-            </Link>
-            , and{" "}
-            <Link href="/website-maintenance" className="text-[#e8b84a] hover:text-[#f6e2ad]">
-              care after launch
-            </Link>
-            . We work with businesses in{" "}
+          <p className="mt-8 text-sm text-muted">
             <Link href="/website-design-charlottetown" className="text-[#e8b84a] hover:text-[#f6e2ad]">
               Charlottetown
-            </Link>{" "}
-            and{" "}
-            <Link href="/web-design-pei" className="text-[#e8b84a] hover:text-[#f6e2ad]">
-              across PEI
             </Link>
-            .
+            {" · "}
+            <Link href="/web-design-pei" className="text-[#e8b84a] hover:text-[#f6e2ad]">
+              Prince Edward Island
+            </Link>
           </p>
         </div>
       </section>
 
-      <section id="why" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
+      <section className="reveal border-t border-gold/15 py-20 sm:py-28">
+        <div className="wrap">
+          <h2 className="max-w-3xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl">
+            What changes when the site is <em className="text-[#e8b84a] italic">done properly</em>
+          </h2>
+          <div className="mt-10 grid gap-4 lg:grid-cols-2">
+            <article className="lift rounded-3xl border border-white/10 bg-black/40 p-7 sm:p-9">
+              <h3 className="font-display text-3xl text-[#f7f2ea]">Most local businesses have</h3>
+              <CheckList items={missing} kind="no" />
+            </article>
+            <article className="lift rounded-3xl border border-gold/35 bg-black/40 p-7 shadow-[0_0_40px_rgba(226,178,58,0.06)] sm:p-9">
+              <h3 className="font-display text-3xl text-[#e8b84a]">Our clients get</h3>
+              <CheckList items={included} kind="yes" />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="reveal border-t border-gold/15 py-20 sm:py-28">
+        <div className="wrap">
+          <h2 className="max-w-3xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl">
+            Why not just <em className="text-[#e8b84a] italic">Facebook?</em>
+          </h2>
+          <div className="mt-10 grid gap-4 lg:grid-cols-2">
+            <article className="lift rounded-3xl border border-white/10 bg-black/40 p-7 sm:p-9">
+              <h3 className="font-display text-3xl text-[#f7f2ea]">Facebook Page</h3>
+              <CheckList items={facebook} kind="no" />
+            </article>
+            <article className="lift rounded-3xl border border-gold/35 bg-black/40 p-7 sm:p-9">
+              <h3 className="font-display text-3xl text-[#e8b84a]">Professional Website</h3>
+              <CheckList items={website} kind="yes" />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="reveal border-t border-gold/15 py-20 sm:py-28">
         <div className="wrap">
           <h2 className="max-w-xl font-display text-5xl leading-[0.95] font-bold text-balance text-[#f7f2ea] sm:text-6xl lg:text-7xl">
-            Why work with <em className="text-[#e8b84a] italic">us</em>
+            How it <em className="text-[#e8b84a] italic">works</em>
           </h2>
-          <ul className="mt-10 divide-y divide-gold/15 border-y border-gold/15">
-            {reasons.map((reason) => (
-              <li key={reason.title} className="grid gap-2 py-6 md:grid-cols-[20rem_1fr] md:items-baseline md:gap-10">
-                <h3 className="font-display text-3xl text-gold">{reason.title}</h3>
-                <p className="text-muted">{reason.text}</p>
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {steps.map((step, index) => (
+              <li key={step} className="lift rounded-3xl border border-gold/25 bg-black/40 p-6">
+                <span className="font-display text-3xl text-[#e8b84a]">{index + 1}</span>
+                <p className="mt-3 text-lg leading-snug text-[#f7f2ea]">{step}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
-        <div className={`wrap grid items-center gap-10 ${portrait.src ? "lg:grid-cols-[18rem_1fr]" : ""}`}>
-          {portrait.src ? (
-            <Image
-              src={portrait.src}
-              alt={portrait.alt}
-              width={720}
-              height={900}
-              className="h-auto w-full rounded-3xl border border-gold/20 object-cover"
-            />
-          ) : null}
-          <div>
-            <h2 className="font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">
-              Built <em className="text-[#e8b84a] italic">different</em>
-            </h2>
-            <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-              MacDaddy Digital was built for businesses that deserve better than cookie-cutter websites. Whether you’re starting from scratch or replacing an outdated online presence, we create digital experiences that actually represent your business.
-            </p>
-            <p className="mt-8 max-w-2xl border-l-2 border-[#e8b84a] pl-5 font-display text-3xl leading-tight text-[#e8b84a] italic sm:text-5xl">
-              The name’s loud. The work is careful.
-            </p>
-            <p className="mt-6">
-              <Link href="/about" className="text-[#e8b84a] hover:text-[#f6e2ad]">
-                More about MacDaddy Digital
-              </Link>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {projects.length > 0 ? (
-        <section id="work" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
-          <div className="wrap">
-            <h2 className="font-display text-5xl leading-[0.95] font-bold text-[#f7f2ea] sm:text-6xl lg:text-7xl">Selected work</h2>
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {projects.map((project) => {
-                const body = (
-                  <>
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={project.imageAlt || project.title}
-                        width={1200}
-                        height={800}
-                        className="mb-5 h-52 w-full rounded-2xl object-cover"
-                      />
-                    ) : null}
-                    <h3 className="font-display text-3xl">{project.title}</h3>
-                    <p className="mt-2 text-muted">{project.summary}</p>
-                  </>
-                )
-
-                return project.href ? (
-                  <a
-                    key={project.title}
-                    href={project.href}
-                    className="rounded-3xl border border-gold/20 bg-panel/60 p-6 transition-colors hover:border-gold/50"
-                  >
-                    {body}
-                  </a>
-                ) : (
-                  <article key={project.title} className="rounded-3xl border border-gold/20 bg-panel/60 p-6">
-                    {body}
-                  </article>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-      ) : null}
-
-      <section id="faq" className="scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
+      <section id="faq" className="reveal scroll-mt-28 border-t border-gold/15 py-20 sm:py-28">
         <JsonLd data={faqSchema(faqs)} />
         <div className="wrap grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>

@@ -69,13 +69,13 @@ export function SiteHeader() {
               )
             })}
             <Link href="/contact" className="btn btn-primary ml-2 min-h-12 px-7 text-base">
-              Let’s talk
+              Free Quote
             </Link>
           </nav>
 
           <div className="flex items-center gap-2 lg:hidden">
             <Link href="/contact" className="btn btn-primary min-h-11 shrink-0 px-4 text-sm" onClick={() => setOpen(false)}>
-              Let’s talk
+              Free Quote
             </Link>
             <button
               type="button"

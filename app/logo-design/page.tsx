@@ -94,7 +94,7 @@ export default function LogoDesignPage() {
         <PageCta
           title="Bring the name. We’ll give it a shape."
           text="Tell us about the business and where the logo needs to live. You’ll get a direct reply from the person on the project."
-          action="Ask about a logo"
+          action="Get a Free Quote"
         />
       </ContentPage>
     </Shell>

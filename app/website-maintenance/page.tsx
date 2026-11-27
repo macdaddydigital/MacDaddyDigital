@@ -104,7 +104,7 @@ export default function WebsiteMaintenancePage() {
         <PageCta
           title="Hand us the site. We’ll keep it living."
           text="Tell us what you have and what keeps slipping. You’ll get a direct reply from the person on the project, and a custom quote before any care starts."
-          action="Ask about care"
+          action="Get a Free Quote"
         />
       </ContentPage>
     </Shell>

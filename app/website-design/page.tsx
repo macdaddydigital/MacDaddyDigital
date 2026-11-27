@@ -117,7 +117,7 @@ export default function WebsiteDesignPage() {
         <PageCta
           title="Tell us what the site needs to do."
           text="You’ll get a direct reply from the person on the project. Professional websites start at $799. Larger work is quoted first."
-          action="Start a website project"
+          action="Get a Free Quote"
         />
       </ContentPage>
     </Shell>

@@ -94,7 +94,7 @@ export default function PeiWebDesignPage() {
         <PageCta
           title="If you’re on the Island, the site should prove it."
           text="Tell us the town and the business. You’ll get a direct reply from the person on the project."
-          action="Start an Island website"
+          action="Get a Free Quote"
         />
       </ContentPage>
     </Shell>

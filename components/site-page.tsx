@@ -126,7 +126,7 @@ export function FaqList({ items }: { items: readonly { question: string; answer:
 export function PageCta({
   title,
   text,
-  action = "Let’s talk",
+  action = "Get a Free Quote",
 }: {
   title: string
   text: string

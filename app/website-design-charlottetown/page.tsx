@@ -93,7 +93,7 @@ export default function CharlottetownPage() {
         <PageCta
           title="Charlottetown deserves a better website than boring."
           text="Tell us about the business. You’ll get a direct reply from the person on the project."
-          action="Start a Charlottetown site"
+          action="Get a Free Quote"
         />
       </ContentPage>
     </Shell>
