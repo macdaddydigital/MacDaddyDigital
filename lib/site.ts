@@ -3,7 +3,7 @@ export const site = {
   owner: "Cody Mac",
   city: "Charlottetown",
   region: "Prince Edward Island",
-  email: "themac@macdaddydigital.ca",
+  email: "projects@macdaddydigital.ca",
   url: "https://www.macdaddydigital.ca",
   description:
     "High-quality websites, brands, and digital experiences for small businesses, without the agency headaches. Professional websites starting at $799. Charlottetown, PEI.",
