@@ -34,35 +34,10 @@ export function HomePage() {
                 Than{" "}
                 <span className="relative inline-block italic text-[#e8b84a]">
                   Boring.
-                  <svg
-                    viewBox="0 0 420 120"
-                    className="pointer-events-none absolute top-[0.72em] left-[-7%] h-[0.62em] w-[120%]"
+                  <span
                     aria-hidden="true"
-                  >
-                    <defs>
-                      <filter id="boring-brush" x="-8%" y="-30%" width="116%" height="170%">
-                        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="noise" />
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.4" xChannelSelector="R" yChannelSelector="G" />
-                      </filter>
-                    </defs>
-                    <g filter="url(#boring-brush)">
-                      <path
-                        d="M22 96 C 70 88, 110 104, 168 86 C 230 66, 280 70, 392 52 C 360 66, 300 78, 236 90 C 170 104, 100 108, 22 96 Z"
-                        fill="#c4922a"
-                      />
-                      <path
-                        d="M4 62 C 48 50, 90 72, 150 48 C 220 20, 280 28, 414 8 C 390 26, 320 36, 250 52 C 170 72, 90 78, 4 62 Z"
-                        fill="#e8b84a"
-                      />
-                      <path
-                        d="M46 56 C 130 36, 220 28, 340 18"
-                        fill="none"
-                        stroke="#f8e2a8"
-                        strokeWidth="5"
-                        strokeLinecap="round"
-                      />
-                    </g>
-                  </svg>
+                    className="boring-rule pointer-events-none absolute inset-x-[0.02em] -bottom-[0.2em] h-[max(2px,0.04em)] rounded-full bg-[#e8b84a]"
+                  />
                 </span>
               </span>
             </h1>
